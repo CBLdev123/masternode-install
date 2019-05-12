@@ -1,12 +1,12 @@
 #!/bin/bash
 
-CONFIG_FILE='CBSL.conf'
-CONFIGFOLDER='/root/.CBSL'
-COIN_DAEMON='/usr/local/bin/CBSLd'
-COIN_CLI='/usr/local/bin/CBSL-cli'
-COIN_REPO='https://github.com/CBLdev123/CBSLCoin/releases/download/v1.0.0.0/CBSL-Daemon-linux.tar.gz'
+CONFIG_FILE='cbslcoin.conf'
+CONFIGFOLDER='/root/.cbslcoincore'
+COIN_DAEMON='/usr/local/bin/cbslcoind'
+COIN_CLI='/usr/local/bin/cbslcoin-cli'
+COIN_REPO='https://github.com/CBLdev123/CBSLCoin/releases/download/v1.0.0/CbslCoin-v1.0.0-linux.tar.gz'
 COIN_NAME='CBSLCoin'
-COIN_PORT=28864
+COIN_PORT=28867
 
 NODEIP=$(curl -s4 icanhazip.com)
 
@@ -60,24 +60,19 @@ function configure_systemd() {
 [Unit]
 Description=$COIN_NAME service
 After=network.target
-
 [Service]
 User=root
 Group=root
-
 Type=forking
 #PIDFile=$CONFIGFOLDER/$COIN_NAME.pid
-
 ExecStart=$COIN_DAEMON -daemon -conf=$CONFIGFOLDER/$CONFIG_FILE -datadir=$CONFIGFOLDER
 ExecStop=-$COIN_CLI -conf=$CONFIGFOLDER/$CONFIG_FILE -datadir=$CONFIGFOLDER stop
-
 Restart=always
 PrivateTmp=true
 TimeoutStopSec=60s
 TimeoutStartSec=10s
 StartLimitInterval=120s
 StartLimitBurst=5
-
 [Install]
 WantedBy=multi-user.target
 EOF
@@ -109,7 +104,6 @@ function configure_startup() {
 # Description: This file starts and stops $COIN_NAME MN server
 #
 ### END INIT INFO
-
 case "\$1" in
  start)
    $COIN_DAEMON -daemon
