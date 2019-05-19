@@ -4,7 +4,7 @@ CONFIG_FILE='cbslcoin.conf'
 CONFIGFOLDER='/root/.cbslcoincore'
 COIN_DAEMON='/usr/local/bin/cbslcoind'
 COIN_CLI='/usr/local/bin/cbslcoin-cli'
-COIN_REPO='https://github.com/CBLdev123/CBSLCoin/releases/download/v1.0.1/CbslCoin-v1.0.1-linux.tar.gz'
+COIN_REPO='https://github.com/CBLdev123/CBSLCoin/releases/download/v1.0.2/CbslCoin-v1.0.2-linux.tar.gz'
 COIN_NAME='CBSLCoin'
 COIN_PORT=28867
 
