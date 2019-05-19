@@ -1,6 +1,6 @@
 # CBSLCOIN
 Shell script to install a [CBSLCoin Masternode](https://www.cbsl.com/) on a Linux server running Ubuntu 14.04,16.04 or 18.04. Use it on your own risk.  
-This script will instal version 1.0
+This script will instal version 1.0.2
 ***
 
 ## VPS installation:
@@ -13,7 +13,7 @@ bash masternode-install.sh
 ## Desktop wallet setup
 
 After the MN is up and running, you need to configure the desktop wallet accordingly. Here are the steps for Windows Wallet
-1. Open the Smelter Coin Desktop Wallet.
+1. Open the CBSL Coin Desktop Wallet.
 2. Go to RECEIVE and create a New Address: **MN1**
 3. Send **1000** **CBSL** to **MN1**.
 4. Wait for 15 confirmations.
@@ -63,12 +63,3 @@ rm -r /usr/local/bin/CBSL*
 rm -r /etc/systemd/system/CBSL.service
 ```
 ***
-
-
-## Donations:
-
-Any donation is highly appreciated.
-
-**BTC**:   
-**ETH**:   
-**LTC**:   
