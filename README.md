@@ -5,7 +5,7 @@ This script will instal version 1.0.2
 
 ## VPS installation:
 ```
-wget -N https://github.com/CBLdev123/masternode-install/blob/master/masternode-install.sh
+wget -N https://raw.githubusercontent.com/CBLdev123/masternode-install/master/masternode-install.sh
 bash masternode-install.sh
 ```
 ***
