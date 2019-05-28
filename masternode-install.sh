@@ -45,9 +45,10 @@ function compile_node() {
   COIN_ZIP=$(echo $COIN_REPO | awk -F'/' '{print $NF}')
   COIN_VER=$(echo $COIN_ZIP | awk -F'/' '{print $NF}' | sed -n 's/.*\([0-9]\.[0-9]\.[0-9]\).*/\1/p')
   COIN_DIR=$(echo ${COIN_NAME,,}-$COIN_VER)
-  tar xvzf $COIN_ZIP --strip=1 -C /usr/local/bin
+  tar xvzf $COIN_ZIP >/dev/null 2>&1
   compile_error
   rm -f $COIN_ZIP >/dev/null 2>&1
+  cp cbslcoin* /usr/local/bin
   compile_error
   strip $COIN_DAEMON $COIN_CLI
   cd -
